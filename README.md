@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# 🎬 Movie Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for discovering movies and TV shows, built with cutting-edge technologies. Browse, search, and explore detailed information about your favorite movies and TV series, including trailers, cast information, and similar content recommendations.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 Search for specific movies and TV shows
+- 🎥 Watch trailers and video content
+- 👥 View cast and crew information
+- 📝 Access detailed information about movies and TV shows
+- 🌓 Dark/Light mode support
+- 🎯 Filter content by age rating
+- 🔄 Sort and organize content
+- 📱 Responsive design for all devices
+- 🎭 Browse similar content recommendations
 
-## React Compiler
+## 🚀 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend Framework and UI
 
-## Expanding the ESLint configuration
+- React - A JavaScript library for building user interfaces
+- TypeScript - For type-safe code and better development experience
+- Chakra UI - A modern component library for building accessible and responsive user interfaces
+- Vite - Next generation frontend tooling for faster development and building
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### State Management
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Zustand - Lightweight state management solution
+- React Query - For efficient server state management and caching
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### API Integration
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Axios - Promise-based HTTP client for making API requests
+- TMDB API - The Movie Database API for fetching movie and TV show data
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Routing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React Router - For handling client-side routing and navigation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Code Quality
+
+- ESLint - For code linting and maintaining code quality
+- TypeScript - For static type checking
+
+### 🛠️ Project Structure
+
+- The project follows a clean and modular architecture:
+
+- components - Reusable UI components
+- pages - Main application pages
+- hooks - Custom React hooks
+- services - API and other service integrations
+- entities - TypeScript interfaces and types
+- /src/state-management - Zustand stores
+- data - Static data and constants
+
+### 🔥 Key Features Implementation
+
+- Dynamic Content Loading - Uses React Query for efficient data fetching and caching
+- Responsive Grid Layout - Implemented using Chakra UI's Grid system
+- Theme Switching - Dark/Light mode using Chakra UI's theme provider
+- State Management - Zustand for managing application state
+- Media Details - Comprehensive view for movie/TV show details
+- Search Functionality - Real-time search with debouncing
+- Video Integration - Embedded video players for trailers
+
+### 🚀 Performance Optimizations
+
+- Lazy loading of components and routes
+- Efficient state management with Zustand
+- Caching and data persistence with React Query
+- Optimized image loading with proper sizing
+- Component splitting for better code splitting
+
+### 🔧 Environment Setup
+
+- Make sure you have Node.js and npm installed on your machine. Then follow these steps:
+
+- Clone the repository
+- Install dependencies with npm install
+- Create a .env file with your TMDB API key
+- Run the development server with npm run dev
+
+### 🤝 Contributing
+
+- Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## Link https://movies-hub-swart-beta.vercel.app/
