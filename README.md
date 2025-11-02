@@ -42,7 +42,7 @@ A modern web application for discovering movies and TV shows, built with cutting
 - ESLint - For code linting and maintaining code quality
 - TypeScript - For static type checking
 
-### 🛠️ Project Structure
+## 🛠️ Project Structure
 
 - The project follows a clean and modular architecture:
 
@@ -54,7 +54,7 @@ A modern web application for discovering movies and TV shows, built with cutting
 - /src/state-management - Zustand stores
 - data - Static data and constants
 
-### 🔥 Key Features Implementation
+## 🔥 Key Features Implementation
 
 - Dynamic Content Loading - Uses React Query for efficient data fetching and caching
 - Responsive Grid Layout - Implemented using Chakra UI's Grid system
@@ -64,7 +64,7 @@ A modern web application for discovering movies and TV shows, built with cutting
 - Search Functionality - Real-time search with debouncing
 - Video Integration - Embedded video players for trailers
 
-### 🚀 Performance Optimizations
+## 🚀 Performance Optimizations
 
 - Lazy loading of components and routes
 - Efficient state management with Zustand
@@ -72,7 +72,7 @@ A modern web application for discovering movies and TV shows, built with cutting
 - Optimized image loading with proper sizing
 - Component splitting for better code splitting
 
-### 🔧 Environment Setup
+## 🔧 Environment Setup
 
 - Make sure you have Node.js and npm installed on your machine. Then follow these steps:
 
@@ -81,7 +81,7 @@ A modern web application for discovering movies and TV shows, built with cutting
 - Create a .env file with your TMDB API key
 - Run the development server with npm run dev
 
-### 🤝 Contributing
+## 🤝 Contributing
 
 - Contributions are welcome! Please feel free to submit a Pull Request.
 
