@@ -15,20 +15,26 @@ const NavBar = () => {
       gap={3}
       direction={{ base: "column", sm: "row" }}
       width="100%"
+      flexWrap="wrap"
     >
-      <HStack gapX={6} align="center" mr={6}>
+      <HStack
+        gapX={6}
+        align="center"
+        mr={6}
+        width={{ base: "100%", sm: "auto" }}
+      >
         <Link to="/">
           <Image src={logo} boxSize="80px" borderRadius={10} />
         </Link>
         <ChakraLinks to="/movie" changeType={() => setType("movie")}>
           Films
         </ChakraLinks>
-
         <ChakraLinks to="/tv" changeType={() => setType("tv")}>
           TV-serier
         </ChakraLinks>
       </HStack>
-      <Flex flex="1" gap={3}>
+
+      <Flex flex="1" gap={3} width={{ base: "100%", sm: "auto" }} padding={3}>
         <SearchForm />
         <ColorSwitcher />
       </Flex>
