@@ -7,7 +7,9 @@ import SearchForm from "./SearchForm";
 import useMediaTypeStore from "../state-managment/type-store";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
+const MotionImage = motion(Image);
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const setType = useMediaTypeStore((s) => s.setType);
@@ -36,7 +38,18 @@ const NavBar = () => {
       >
         <HStack gapX={6} align="center">
           <Link to="/">
-            <Image src={logo} boxSize="70px" borderRadius={10} />
+            <MotionImage
+              src={logo}
+              boxSize="70px"
+              borderRadius={10}
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: [0, -20, 0], opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                times: [0, 0.3, 1],
+              }}
+            />
           </Link>
           <ChakraLinks to="/movie" changeType={() => setType("movie")}>
             Films
