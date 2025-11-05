@@ -6,7 +6,7 @@ const AgeFilter = () => {
   const withAdult = useMovieQueryStore((s) => s.movieQuery.withAdult);
   const currentAge = order.items.find((o) => o.value === withAdult);
   return (
-    <Select.Root collection={order} size="sm" width="10rem">
+    <Select.Root collection={order} size="sm" maxWidth="10rem">
       <Select.HiddenSelect />
       <Select.Control>
         <Select.Trigger>

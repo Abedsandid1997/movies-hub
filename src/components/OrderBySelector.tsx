@@ -13,7 +13,7 @@ const OrderBySelector = () => {
   const sortBy = useMovieQueryStore((s) => s.movieQuery.sortBy);
   const currentOrder = order.items.find((o) => o.value === sortBy);
   return (
-    <Select.Root collection={order} size="sm" width="10rem">
+    <Select.Root collection={order} size="sm" maxW="10rem">
       <Select.HiddenSelect />
       <Select.Control>
         <Select.Trigger>

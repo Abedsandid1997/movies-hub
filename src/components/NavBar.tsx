@@ -5,37 +5,88 @@ import { Link } from "react-router-dom";
 import ChakraLinks from "./ChakraLink";
 import SearchForm from "./SearchForm";
 import useMediaTypeStore from "../state-managment/type-store";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const setType = useMediaTypeStore((s) => s.setType);
 
   return (
     <Flex
       as="nav"
       align="center"
-      gap={3}
-      direction={{ base: "column", sm: "row" }}
+      justify="space-between"
       width="100%"
       flexWrap="wrap"
+      px={4}
+      py={3}
+      boxShadow="sm"
+      bg="chakra-body-bg"
+      position="sticky"
+      top={0}
+      zIndex={1000}
     >
-      <HStack
-        gapX={6}
+      {/* Desktop Nav */}
+      <Flex
+        display={{ base: "none", md: "flex" }}
         align="center"
-        mr={6}
-        width={{ base: "100%", sm: "auto" }}
+        gap={5}
+        width="100%"
       >
-        <Link to="/">
-          <Image src={logo} boxSize="80px" borderRadius={10} />
-        </Link>
+        <HStack gapX={6} align="center">
+          <Link to="/">
+            <Image src={logo} boxSize="70px" borderRadius={10} />
+          </Link>
+          <ChakraLinks to="/movie" changeType={() => setType("movie")}>
+            Films
+          </ChakraLinks>
+          <ChakraLinks to="/tv" changeType={() => setType("tv")}>
+            TV-serier
+          </ChakraLinks>
+        </HStack>
+
+        <Flex flex="1" justify="flex-end" gap={3}>
+          <SearchForm />
+          <ColorSwitcher />
+        </Flex>
+      </Flex>
+
+      {/* Mobile Nav */}
+      <Flex display={{ base: "flex", md: "none" }} align="center" width="100%">
+        <HStack gapX={4} align="center" width="100%">
+          <Link to="/">
+            <Image src={logo} boxSize="70px" borderRadius={10} />
+          </Link>
+          <SearchForm />
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </HStack>
+      </Flex>
+
+      {/* Mobile Dropdown Menu */}
+      <Flex
+        direction="column"
+        align="center"
+        gap={3}
+        mt={2}
+        width="100%"
+        borderRadius="md"
+        overflow="hidden"
+        transition="all 0.3s ease"
+        transform={isOpen ? "translateY(0)" : "translateY(-10px)"}
+        opacity={isOpen ? 1 : 0}
+        maxHeight={isOpen ? "200px" : "0"}
+        display={{ base: "flex", md: "none" }}
+        pointerEvents={isOpen ? "auto" : "none"}
+      >
         <ChakraLinks to="/movie" changeType={() => setType("movie")}>
           Films
         </ChakraLinks>
         <ChakraLinks to="/tv" changeType={() => setType("tv")}>
           TV-serier
         </ChakraLinks>
-      </HStack>
-
-      <Flex flex="1" gap={3} width={{ base: "100%", sm: "auto" }} padding={3}>
-        <SearchForm />
         <ColorSwitcher />
       </Flex>
     </Flex>
