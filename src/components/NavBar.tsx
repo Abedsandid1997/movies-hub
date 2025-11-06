@@ -42,13 +42,14 @@ const NavBar = () => {
               src={logo}
               boxSize="70px"
               borderRadius={10}
-              initial={{ y: -30, opacity: 0 }}
-              animate={{ y: [0, -20, 0], opacity: 1 }}
-              transition={{
-                duration: 0.8,
-                ease: "easeOut",
-                times: [0, 0.3, 1],
-              }}
+              // initial={{ y: -30, opacity: 0 }}
+              // animate={{ y: [0, -20, 0], opacity: 1 }}
+              // transition={{
+              //   duration: 0.8,
+              //   ease: "easeOut",
+              //   times: [0, 0.3, 1],
+              // }}
+              className="animate-bounce"
             />
           </Link>
           <ChakraLinks to="/movie" changeType={() => setType("movie")}>
