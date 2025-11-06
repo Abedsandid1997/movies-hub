@@ -70,7 +70,19 @@ const NavBar = () => {
       <Flex display={{ base: "flex", md: "none" }} align="center" width="100%">
         <HStack gapX={4} align="center" width="100%">
           <Link to="/">
-            <Image src={logo} boxSize="70px" borderRadius={10} />
+            <MotionImage
+              src={logo}
+              boxSize="70px"
+              borderRadius={10}
+              // initial={{ y: -30, opacity: 0 }}
+              // animate={{ y: [0, -20, 0], opacity: 1 }}
+              // transition={{
+              //   duration: 0.8,
+              //   ease: "easeOut",
+              //   times: [0, 0.3, 1],
+              // }}
+              className="animate-bounce"
+            />
           </Link>
           <SearchForm />
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
